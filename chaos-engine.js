@@ -1,4 +1,4 @@
-#WAAAAAAAAAARGH
+
 let chaosLevel = 1000;
 const MAX_CHAOS = 5000;
 const SECRET_CODE = "CrowsRule42!";
