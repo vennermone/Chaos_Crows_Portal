@@ -4,9 +4,9 @@
     --brazilian-moon: #39FF14;
     --clooney-blood: linear-gradient(90deg, #ff0000, #0000ff 70%, #00ff00);
     --sinkhole-disco: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='100' height='100' fill='%23FF00FF'/%3E%3C/svg%3E");
-  }
+}
   
-  body.void-certified {
+body.void-certified {
     background: radial-gradient(circle, #000 0%, #1a0000 100%);
     color: var(--brazilian-moon);
     font-family: 'Comic Sans MS', 'Wingdings', sans-serif;
@@ -14,29 +14,59 @@
     border: 3px solid var(--void-primary);
     animation: realityGlitch 0.1s infinite;
     cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Ccircle cx='4' cy='4' r='4' fill='%23ff00ff'/%3E%3C/svg%3E"), auto;
-  }
+    margin: 0; 
+}
   
-  @keyframes realityGlitch {
+@keyframes realityGlitch {
     0% { transform: translate(0); }
     20% { transform: translate(-2px, 2px); }
     40% { transform: translate(-2px, -2px); }
     60% { transform: translate(2px, 2px); }
     80% { transform: translate(2px, -2px); }
     100% { transform: translate(0); }
-  }
+}
   
-  #war-band-brunch h1 {
+#war-band-brunch h1 {
     font-size: 4rem;
     text-shadow: 0 0 10px var(--void-primary);
     background: var(--clooney-blood);
+    -webkit-background-clip: text; 
     background-clip: text;
     -webkit-text-fill-color: transparent;
     border-bottom: 3px dashed #39FF14;
     margin: 0;
     padding: 1rem;
+}
+
+/* WAR BAND UNIT ART */
+.war-band-unit {
+    position: fixed;
+    animation: warBandFloat 4s linear forwards, warBandGlitch 0.3s infinite;
+    z-index: 9998;
+    width: 80px;
+    filter: drop-shadow(0 0 5px #ff00ff);
   }
   
-  button {
+  @keyframes warBandFloat {
+    from { 
+      transform: translateY(100vh) rotate(0deg);
+      opacity: 1;
+    }
+    to { 
+      transform: translateY(-100vh) rotate(360deg);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes warBandGlitch {
+    0% { transform: translate(0); }
+    25% { transform: translate(2px, -2px); }
+    50% { transform: translate(-2px, 3px); }
+    75% { transform: translate(3px, 1px); }
+    100% { transform: translate(0); }
+  }
+  
+button {
     background: #000 !important;
     border: 2px solid var(--void-primary) !important;
     color: var(--brazilian-moon) !important;
@@ -45,22 +75,23 @@
     cursor: nesw-resize;
     transition: all 0.1s linear;
     clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
-  }
+}
   
-  button:hover {
+button:hover {
     background: var(--clooney-blood) !important;
     transform: rotate(3deg) scale(1.2);
     text-shadow: 0 0 15px #fff;
     border: 2px dotted #39FF14 !important;
-  }
+}
   
-  .disco-active {
+.disco-active {
     background: repeating-conic-gradient(#FF00FF 0% 25%, #0000FF 0% 50%) !important;
     padding: 2rem;
-    border: 3px vibrating #39FF14;
-  }
+    border: 3px dashed #39FF14; /* FIXED: Replaced invalid 'vibrating' */
+    animation: discoStorm 5s linear infinite; /* NEW */
+}
   
-  .crow-tax-calculator input {
+.crow-tax-calculator input {
     background: #000;
     border: 1px solid var(--void-primary);
     color: #39FF14;
@@ -68,21 +99,21 @@
     margin: 1rem 0;
     transform: skew(-15deg);
     box-shadow: 0 0 20px var(--void-primary);
-  }
+}
   
-  #debtOutput {
+#debtOutput {
     font-size: 3rem;
     animation: debtPulse 0.5s infinite;
     text-decoration: blink;
-  }
+}
   
-  @keyframes debtPulse {
+@keyframes debtPulse {
     0% { color: #FF00FF; }
     50% { color: #39FF14; }
     100% { color: #0000FF; }
-  }
+}
   
-  .void-manifesto {
+.void-manifesto {
     background: #000;
     color: #39FF14 !important;
     border: 1px solid var(--void-primary);
@@ -91,9 +122,9 @@
     text-shadow: 0 0 10px #39FF14;
     position: relative;
     overflow: hidden;
-  }
+}
   
-  .void-manifesto::before {
+.void-manifesto::before {
     content: "";
     position: absolute;
     top: 0;
@@ -102,80 +133,26 @@
     height: 100%;
     background: linear-gradient(90deg, transparent, #ff00ff55, transparent);
     animation: manifestoScan 3s infinite;
-  }
+}
   
-  @keyframes manifestoScan {
+@keyframes manifestoScan {
     from { left: -100%; }
     to { left: 100%; }
-  }
+}
   
-  marquee {
+marquee {
     font-size: 2rem;
     color: #FF00FF;
     background: #000;
     padding: 1rem;
     border: 3px double #39FF14;
     text-shadow: 0 0 15px;
-  }
+}
   
-  .glitched-text {
+.glitched-text {
     animation: textGlitch 0.1s infinite;
-  }
+}
   
-  @keyframes textGlitch {
+@keyframes textGlitch {
     0% { text-shadow: 3px 0 blue; }
-    25% { text-shadow: -3px 0 red; }
-    50% { text-shadow: 0 3px green; }
-    75% { text-shadow: 0 -3px yellow; }
-    100% { text-shadow: 3px 0 blue; }
-  }
-  
-  .sinkhole-council {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background: #000;
-    border-top: 3px wavy var(--void-primary);
-    padding: 1rem;
-    text-align: center;
-  }
-  
-  .rainbow-text {
-    background: linear-gradient(90deg, #ff0000, #ff00ff, #0000ff, #00ff00);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    animation: rainbow 2s infinite;
-  }
-  
-  @keyframes rainbow {
-    to { filter: hue-rotate(360deg); }
-  }
-  
-  .war-band-alert {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(5deg);
-    background: #000;
-    border: 3px solid #ff0000;
-    padding: 2rem;
-    color: #39FF14;
-    z-index: 9999;
-    animation: alertPulse 0.3s infinite;
-  }
-  
-  @keyframes alertPulse {
-    50% { transform: translate(-50%, -50%) scale(1.2) rotate(-5deg); }
-  }
-  
-  .cursor-blink {
-    animation: cursorBlink 0.5s infinite;
-  }
-  
-  @keyframes cursorBlink {
-    50% { opacity: 0; }
-  }
-  
-  /* LEGACY CODE FROM THE BRAZILIAN MOON (DO NOT TOUCH) */
-  #hoverAlley:hover { transform: skew(10deg) !important; transition: 0s !important; }
+}
