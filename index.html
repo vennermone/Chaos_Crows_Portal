@@ -6,11 +6,15 @@
     <title>HYPER-CRYPTO-SINKHOLE COLLECTIVE // CROW TAX EVASION PORTAL</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥🌀</text></svg>">
     <link rel="stylesheet" href="void-styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap">
 </head>
 <body class="void-certified">
-    <!-- WARNING: DO NOT MAKE EYE CONTACT WITH THE HOVER-ALLEY -->
     <header id="war-band-brunch">
         <h1>🪶 WELCOME TO <span id="chaosCounter">1000%</span> REALITY<span class="cursor-blink">_</span></h1>
+        <!-- Added chaos meter -->
+        <div class="chaos-meter">
+            <progress value="1000" max="5000"></progress>
+        </div>
         <nav>
             <button onclick="summonWarBands()">SUMMON WAR BANDS</button>
             <button onclick="payCrowTax()">PAY TAXES (WIZARD BONES)</button>
@@ -37,7 +41,7 @@
         <aside id="hoverAlley">
             <pre class="void-manifesto">
   ░░░░░░░░░▄▄▄▀▀▀▄▄███▄░░░░░░░
-  ░░░░░▄▀▀░░░░░░░▐░▀██▌░░░░░░   THE VOID'S
+  ░░░░░▄▀▀░░░░░░░▐░▀██▌░░░░░░   THE VOID
   ░░░▄▀░░░░▄▄███░▌▀▀░▀█░░░░░░   MANIFESTO:
   ░░▄█░░▄▀▀▒▒▒▒▒▄▐░░░░█▌░░░░░   --------------------------
   ░▐█▀▄▀▄▄▄▄▀▀▀▀▌░░░░░▐█▄░░░░   [1] CROWS OWN TIME
@@ -45,6 +49,10 @@
   ░░░░░░░░░░░░░░▐░░░░▐████████ [3] THE PEN IS GUILTY
   ░░░░░░▀▀░░░░░░▐░░░░▐████████ (END TRANSMISSION)
             </pre>
+            <!-- Added secret section -->
+            <div class="secret-input">
+                <button onclick="unlockSecret()">UNLOCK CROW LAW SECRETS</button>
+            </div>
         </aside>
     </main>
 
@@ -53,26 +61,6 @@
         <p>Customer support: <a href="javascript:void(0)" onclick="initiateBrunchHotline()">CLICK TO SPEAK TO WAR BAND BRUNCH</a></p>
     </footer>
 
-    <script>
-        // WARNING: THIS CODE CONTAINS 72% SENTIENT KOMBUCHA
-        let chaosLevel = 1000;
-        
-        function summonWarBands() {
-            document.body.innerHTML += `<div class="war-band-alert">WAR BANDS INCOMING: ${Date.now()}</div>`;
-            chaosLevel *= 1.5;
-            document.getElementById('chaosCounter').textContent = `${chaosLevel}%`;
-        }
-
-        function calculateTax() {
-            const screams = document.getElementById('screamsInput').value || 42;
-            document.getElementById('debtOutput').innerHTML = 
-                `${screams * 3.14} <small>(+ 200% CROW ROYALTIES)</small>`;
-        }
-
-        function toggleSinkhole() {
-            document.getElementById('sinkholeDisco').classList.toggle('disco-inactive');
-            document.querySelector('marquee').style.fontFamily = "Comic Sans MS";
-        }
-    </script>
+    <script src="chaos-engine.js"></script>
 </body>
 </html>
