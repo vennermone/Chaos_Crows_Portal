@@ -64,6 +64,50 @@ function unlockSecret() {
         alert("ACCESS DENIED. FEATHER AUDIT INITIATED.");
     }
 }
+// Premium advertisers (would need backend IRL)
+const crypticAds = [
+    {
+      text: "NEED MORE CHAOS? TRIMBLE™ GPS FOR INTERDIMENSIONAL TRAVEL ↗",
+      link: "https://example.com",
+      tier: "premium",
+      cpm: 6.66 // Cost per mille (per 1k views)
+    },
+    {
+      text: "RAY-BAN® SHADES PROTECT AGAINST VOID GLARE ↗",
+      link: "https://example.com",
+      tier: "premium",
+      cpm: 4.20
+    }
+  ];
+  
+  let adImpressions = 0;
+  
+  function rotateAds() {
+    const ad = crypticAds[Math.floor(Math.random() * crypticAds.length)];
+    const adContainer = document.getElementById('adContainer');
+    
+    adContainer.innerHTML = `
+      <a href="${ad.link}" target="_blank" 
+         onclick="trackAdClick('${ad.text}')"
+         class="glitched-text">
+         <marquee>${ad.text}</marquee>
+      </a>
+    `;
+    
+    adImpressions++;
+    if(adImpressions % 1000 === 0) {
+      sendInvoiceToAdvertisers();
+    }
+  }
+  
+  // Track clicks (would need backend)
+  function trackAdClick(adText) {
+    console.log(`Chaos profit: ${adText} clicked`);
+  }
+  
+  // Rotate every 30s + on chaos events
+  setInterval(rotateAds, 30000);
+  document.addEventListener('chaosEvent', rotateAds);
 
 // Initialize chaos meter
 document.querySelector('.chaos-meter progress').value = chaosLevel;

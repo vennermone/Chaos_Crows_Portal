@@ -156,3 +156,39 @@ marquee {
 @keyframes textGlitch {
     0% { text-shadow: 3px 0 blue; }
 }
+/* Ads that fight the user's eyeballs */
+.void-ad {
+    border: 2px dashed var(--void-primary);
+    margin: 2rem;
+    padding: 1rem;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .ad-heading {
+    font-family: 'Comic Sans MS', cursive;
+    animation: adGlitch 2s infinite;
+  }
+  
+  @keyframes adGlitch {
+    0% { letter-spacing: -2px; }
+    50% { letter-spacing: 5px; }
+    100% { letter-spacing: -2px; }
+  }
+  
+  .ad-content {
+    background: #000;
+    padding: 1rem;
+    border: 1px solid #39FF14;
+    position: relative;
+  }
+  
+  .ad-content::after {
+    content: "AD";
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: #ff00ff;
+    font-size: 0.8rem;
+    opacity: 0.5;
+  }
